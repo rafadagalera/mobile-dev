@@ -1,0 +1,26 @@
+Aula - 1 | Emulador
+
+1º
+- verificar se tudo está instalado e atualizado: >node -v, >npm -v, >npm view react-native version, >code -version
+
+2º:
+- >cd Android
+- >cd SDK
+- >cd emulator
+- >emulator -list-avds
+- >emulator -avd Pixel_4_XL (abrir o emulador)
+
+3º - Criar projeto mobile:
+- npx @react-native-community/cli init (nome do projeto)
+- Yes
+- Diretory
+- cd (nome do projeto)
+- code .
+- npx react-native run-android (rodar no terminal do vs code) 
+
+Comandos:
+- cls (limpar prompt)
+- md (cria)
+- cd (muda)
+
+
