@@ -1,0 +1,73 @@
+
+import React, { useState } from 'react';
+import { View, Text, TextInput,Button } from 'react-native';
+import { StyleSheet } from 'react-native';
+export default function App() {
+// Declara uma variável de estado chamada "valor1" 
+// e uma função "setValor1" para alterá-la
+const [valor1, setValor1] = useState('');
+const [valor2, setValor2] = useState('');
+const [resultado, setResultado] = useState('');
+const concatenar = () => {
+  setResultado(valor1 + valor2)
+};
+const limpar = () => {
+  setResultado(''),
+  setValor1(''),
+  setValor2('')
+};
+
+return (
+// eslint-disable-next-line react-native/no-inline-styles
+<View style={styles.container}>
+  <Text style= {styles.titulo}> Concatenação de valores</Text>
+    < TextInput 
+    style = {styles.input}
+    placeholder='Digite o primeiro valor'
+    value={valor1}
+    onChangeText={setValor1}
+    />
+    < TextInput 
+    style = {styles.input}
+    placeholder='Digite o segundo valor'
+    value={valor2}
+    onChangeText={setValor2}
+    />
+  <Button title='Concatenar' onPress={concatenar}/>  
+  <Text style = {styles.resultado}>
+    Resultado: {resultado}
+  </Text>
+  <Button title='Limpar' onPress={limpar} />
+</View>
+
+);
+};
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#f5f5f5',
+  },
+  titulo: {
+    fontSize: 22,
+    marginBottom: 20,
+    fontWeight: 'bold',
+  },
+  input: {
+    height: 50,
+    width: '100%',
+    borderColor:' #888',
+    borderWidth:1 ,
+    borderRadius:8 ,
+    paddingHorizontal:10 ,
+    marginBottom: 15,
+    backgroundColor: '#fff',
+  },
+  resultado:{
+    marginTop:20,
+    fontSize:18 ,
+    fontWeight: '600',
+  },
+});
